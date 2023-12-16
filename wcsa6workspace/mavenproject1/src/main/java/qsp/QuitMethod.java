@@ -1,0 +1,31 @@
+package qsp;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class QuitMethod {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		//parent browser
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		//lauch the web application
+		driver.get("http://omayo.blogspot.com/");
+		Thread.sleep(2000);
+		
+		//launch child browser
+		driver.findElement(By.xpath("//a[text()='Open a popup window']")).click();
+		
+		//close the browser
+		driver.close();
+		
+		//use the quit for close all the browsers
+		driver.quit();
+
+	}
+
+}

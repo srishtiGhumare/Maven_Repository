@@ -1,0 +1,40 @@
+package AssignmentPackage;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class flipkartAssignment {
+
+	public static void main(String[] args) throws InterruptedException {
+		//Launch the Browsers
+				WebDriver driver=new ChromeDriver();
+				//maximize the browser
+				driver.manage().window().maximize();
+				//apply implicit wait
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+				//Launch the web application
+				driver.get("https://www.flipkart.com/");
+				
+				//handle the popup
+				driver.findElement(By.xpath("//span[text()='✕']")).click();
+				//search for laptop in search box
+				driver.findElement(By.name("q")).sendKeys("laptop");
+				//click on search icon
+				driver.findElement(By.xpath("//button[@aria-label='Search for Products, Brands and More']")).click();
+				Thread.sleep(2000);
+				//click on Brand and select HP
+				driver.findElement(By.xpath("//div[text()='Brand']")).click();
+				driver.findElement(By.className("_3879cV")).click();
+				//click on processor and select corei7
+				//click on os and select window11
+				driver.findElement(By.xpath("//div[text()='Windows 11']")).click();
+				
+				//identify the name of the laptops
+				
+
+	}
+
+}
